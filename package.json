@@ -1,0 +1,37 @@
+{
+  "name": "sofy",
+  "version": "0.1.0",
+  "description": "SoFy — лучший медиаплеер",
+  "main": "./out/main/index.js",
+  "author": "SoFy",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "scripts": {
+    "core:jar": "node scripts/build-core.mjs",
+    "dev": "npm run core:jar && electron-vite dev",
+    "dev:fast": "electron-vite dev",
+    "preview": "vite --config vite.preview.config.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "build": "npm run core:jar && npm run typecheck && electron-vite build",
+    "dist:win": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "@xhayper/discord-rpc": "^1.5.1",
+    "hls.js": "^1.7.4",
+    "lucide-react": "1.66.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zustand": "5.0.16"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0",
+    "electron-vite": "6.0.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.5"
+  }
+}

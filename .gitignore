@@ -1,0 +1,17 @@
+node_modules/
+out/
+dist/
+release/
+.shots/
+.gradle/
+core/.gradle/
+core/build/
+.idea/
+SonataFy-src-0.1.0/
+supabase/.temp/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+appId: ru.sofy.player
+productName: SoFy
+copyright: SoFy
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**
+  - package.json
+  - '!**/*.map'
+extraResources:
+  - from: core/build/libs/sofy-core-all.jar
+    to: core/sofy-core-all.jar
+asar: true
+compression: normal
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  icon: build/icon.png
+  artifactName: ${productName}-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: SoFy
+  artifactName: SoFy-Setup-${version}.${ext}
+portable:
+  artifactName: SoFy-Portable-${version}.${ext}
