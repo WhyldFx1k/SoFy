@@ -13,7 +13,7 @@
     "preview": "vite --config vite.preview.config.ts",
     "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
     "build": "npm run core:jar && npm run typecheck && electron-vite build",
-    "dist:win": "npm run build && electron-builder --win"
+    "dist:win": "npm run build && electron-builder --win --publish never"
   },
   "dependencies": {
     "@xhayper/discord-rpc": "^1.5.1",
